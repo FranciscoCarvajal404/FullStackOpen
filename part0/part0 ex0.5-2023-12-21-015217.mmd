@@ -1,0 +1,23 @@
+sequenceDiagram
+
+actor u as User
+participant b as Browser
+participant s as Server
+
+u ->> b: Enters the URL
+
+b ->> s: HTTP GET https://studies.cs.helsinki.fi/exampleapp/spa
+s -->> b: HTML code
+
+b ->> s: HTTP GET https://studies.cs.helsinki.fi/exampleapp/main.css
+s -->>b: main.css
+
+b ->> s: HTTP GET https://studies.cs.helsinki.fi/exampleapp/spa.js
+s -->>b: spa.js
+
+Note over b: Executes spa.js and request JSON data
+b ->> s: HTTP GET https://studies.cs.helsinki.fi/exampleapp/data.json
+s -->> b: Returns array of notes
+Note over b: Runs event handler in spa.js
+
+b -->> u: Renders the notes on display
