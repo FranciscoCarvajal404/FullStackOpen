@@ -1,0 +1,14 @@
+sequenceDiagram
+
+actor u as User
+participant b as Browser
+participant s as Server
+
+b --> u: Enters page
+Note over u,b: HTTP GET https://studies.cs.helsinki.fi/exampleapp/spa 
+u ->>+ b: Submit info via form
+
+b ->> s: HTTP POST request with json info
+s -->> b: Return 201 created code
+
+b -->>- u: Renders the new list
