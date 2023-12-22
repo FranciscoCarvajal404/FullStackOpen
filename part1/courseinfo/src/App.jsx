@@ -4,26 +4,18 @@ const Header = (props) => {
   )
 }  
 
+const Part = (props) =>{
+  return(
+    <p>{props.text} {props.number}</p>
+  )
+}
+
 const Content = () =>{
   return(
     <>
-      <p>Fundamentals of React 10</p>
-    </>
-  )
-}
-
-const Props = () =>{
-  return(
-    <>
-      <p>Using props to pass data 7</p>
-    </>
-  )
-}
-
-const State = () =>{
-  return(
-    <>
-      <p>State of a component 14</p>
+      <Part text={'Fundamentals of React'} number={10}/>
+      <Part text={'Using props to pass data'} number={7}/>
+      <Part text={'State of a component'} number={14}/>
     </>
   )
 }
@@ -44,8 +36,6 @@ const App = () => {
     <>
       <Header course={course}/>
       <Content/>
-      <Props/>
-      <State/>
       <Total total={30} />
     </>
   )
