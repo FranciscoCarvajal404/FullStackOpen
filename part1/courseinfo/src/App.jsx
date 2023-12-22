@@ -4,6 +4,38 @@ const Header = (props) => {
   )
 }  
 
+const Content = () =>{
+  return(
+    <>
+      <p>Fundamentals of React 10</p>
+    </>
+  )
+}
+
+const Props = () =>{
+  return(
+    <>
+      <p>Using props to pass data 7</p>
+    </>
+  )
+}
+
+const State = () =>{
+  return(
+    <>
+      <p>State of a component 14</p>
+    </>
+  )
+}
+
+const Total = ({total}) =>{
+  return(
+    <>
+      <p>Number of excersices: {total}</p>
+    </>
+  )
+}
+
 const App = () => {
   const course = 'Half Stack application development'
 
@@ -11,6 +43,10 @@ const App = () => {
   return (
     <>
       <Header course={course}/>
+      <Content/>
+      <Props/>
+      <State/>
+      <Total total={30} />
     </>
   )
 }
